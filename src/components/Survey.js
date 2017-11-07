@@ -1,9 +1,13 @@
 import React, {Component} from 'react'
+import data from '../data/data'
 
 class Survey extends Component {
   render() {
+    const questions = data.map(item => <li>{item}</li>)
     return (
-      <ol></ol>
+      <ol>
+        {questions}
+      </ol>
     )
   }
 }
