@@ -28,7 +28,7 @@
   to { transform: rotate(360deg); }
 }
 
-/* My additional styling */
+/* My additional styling - needs to be properly responsive */
 .subheading {
   margin-top: 3em;
 }
