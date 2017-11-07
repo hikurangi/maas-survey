@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 
-class Survey extents Component {
+class Survey extends Component {
   render() {
     return (
       <p>
-        SURVEY HERE
       </p>
     )
   }
