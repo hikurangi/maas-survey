@@ -8,4 +8,4 @@ To preview this work in progress on your machine:
 2. `yarn` or `npm i` to install the requisite dependencies.
 3. `yarn start` or `npm run start` to launch the local server.
 4. Use the conveniently launched browser tab *or* navigate to [http://localhost:3000](http://localhost:3000)
-5. Et voila! There you have it.
+5. Et voilà! There you have it.
