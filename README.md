@@ -9,3 +9,5 @@ To preview this work in progress on your machine:
 3. `yarn start` or `npm run start` to launch the local server.
 4. Use the conveniently launched browser tab *or* navigate to [http://localhost:3000](http://localhost:3000)
 5. Et voilà! There you have it.
+
+To see it unleashed in the wild, visit [https://hikurangi.github.io/maas-survey/](https://hikurangi.github.io/maas-survey/).
