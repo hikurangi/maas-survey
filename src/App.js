@@ -20,16 +20,14 @@ class App extends Component {
           <p>
             <strong><em>Instructions:</em></strong> Below is a collection of statements about your everyday experience. Using the 1-6 scale below, please indicate how frequently or infrequently you currently have each experience. Please answer according to what really reflects your experience rather than what you think your experience should be. Please treat each item separately from every other item.
           </p>
-          <table className="scale-table">
-            <tr>
-              <td>1 Almost Always</td>
-              <td>2 Very Frequently</td>
-              <td>3 Somewhat Frequently</td>
-              <td>4 Somewhat Infrequently</td>
-              <td>5 Very Infrequently</td>
-              <td>6 Almost Never</td>
-            </tr>
-          </table>
+          <ol className="scale-list">
+            <li>Almost Always</li>
+            <li>Very Frequently</li>
+            <li>Somewhat Frequently</li>
+            <li>Somewhat Infrequently</li>
+            <li>Very Infrequently</li>
+            <li>Almost Never</li>
+          </ol>
           <Survey/>
         </section>
       </div>
