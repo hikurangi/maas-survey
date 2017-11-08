@@ -58,3 +58,12 @@ ol.scale-list>li:before {
   position: absolute;
   left: -2px;
 }
+
+/* Radio buttons and group */
+.radio-button-group {
+  display: flex;
+}
+
+.radio-button {
+  width: auto;
+}
