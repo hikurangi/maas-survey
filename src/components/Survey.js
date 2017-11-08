@@ -15,8 +15,8 @@ class Survey extends Component {
 
   render() {
     const questions = data.map((item, index) => (
-      <MuiThemeProvider>
-        <Question key={index} id={index} handleChange={this.handleChange} item={item}/>
+      <MuiThemeProvider key={index}>
+        <Question id={index} handleChange={this.handleChange} item={item}/>
       </MuiThemeProvider>
     ))
     return (
