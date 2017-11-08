@@ -8,12 +8,15 @@ class Survey extends Component {
     super(props);
     this.state = {}
   }
+
+  handleChange = e => {
+    console.log({e});
+  }
+
   render() {
     const questions = data.map((item, index) => (
       <MuiThemeProvider>
-        <Question key={index} id={index}>
-          {item}
-        </Question>
+        <Question key={index} id={index} handleChange={this.handleChange} item={item}/>
       </MuiThemeProvider>
     ))
     return (
