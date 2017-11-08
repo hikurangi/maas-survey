@@ -7,12 +7,17 @@ const Question = props => {
       value={index}
       label={index}
       onChange={props.handleChange}
+      className="radio-button"
     />
   ))
   return (
     <li key={props.id} id={props.id}>
       {props.item}
-      <RadioButtonGroup name="scale">
+      <RadioButtonGroup
+        name="scale"
+        labelPosition="left"
+        className="radio-button-group"
+      >
         {buttons}
       </RadioButtonGroup>
     </li>
