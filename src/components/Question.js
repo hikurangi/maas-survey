@@ -4,6 +4,7 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 const Question = props => {
   const buttons = [1, 2, 3, 4, 5, 6].map((item, index) => (
     <RadioButton
+      key={index}
       value={index + 1}
       label={index + 1}
       onChange={props.handleChange}
