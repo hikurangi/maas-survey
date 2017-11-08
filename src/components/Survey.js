@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import data from '../data/data'
+import Question from './Question'
 
 class Survey extends Component {
   constructor(props) {
@@ -8,9 +10,11 @@ class Survey extends Component {
   }
   render() {
     const questions = data.map((item, index) => (
-      <li key={index} id={index}>
-        {item}
-      </li>
+      <MuiThemeProvider>
+        <Question key={index} id={index}>
+          {item}
+        </Question>
+      </MuiThemeProvider>
     ))
     return (
       <ol>
