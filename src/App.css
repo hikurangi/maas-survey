@@ -59,7 +59,10 @@ ol.scale-list>li:before {
   left: -2px;
 }
 
-/* Radio buttons and group */
+/* Radio buttons and group - unnecessary when using a style object */
+
+/*
+
 .radio-button-group {
   display: flex;
 }
@@ -67,3 +70,5 @@ ol.scale-list>li:before {
 .radio-button {
   width: auto;
 }
+
+*/

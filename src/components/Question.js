@@ -4,10 +4,10 @@ import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 const Question = props => {
   const buttons = [1, 2, 3, 4, 5, 6].map((item, index) => (
     <RadioButton
-      value={index}
-      label={index}
+      value={index + 1}
+      label={index + 1}
       onChange={props.handleChange}
-      className="radio-button"
+      style={{ width: "auto" }}
     />
   ))
   return (
@@ -16,7 +16,7 @@ const Question = props => {
       <RadioButtonGroup
         name="scale"
         labelPosition="left"
-        className="radio-button-group"
+        style={{ display: "flex" }}
       >
         {buttons}
       </RadioButtonGroup>
