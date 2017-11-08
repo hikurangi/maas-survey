@@ -16,9 +16,9 @@ class Survey extends Component {
 
   render() {
     const scale = [1, 2, 3, 4, 5, 6]
-    const mean = Object.keys(this.state).length === 15
-      ? Object.values(this.state).reduce((a, b) => a + b) / 15
-      : undefined
+    const stateValues = Object.values(this.state)
+    const mean = stateValues.reduce((a, b) => a + b, 0) / stateValues.length
+
     console.log({mean});
     const questions = data.map((item, index) => (
       <MuiThemeProvider key={index}>
