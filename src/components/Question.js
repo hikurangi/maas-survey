@@ -2,7 +2,8 @@ import React from 'react'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 
 const Question = props => {
-  const buttons = [1, 2, 3, 4, 5, 6].map((item, index) => (
+  const scale = [1, 2, 3, 4, 5, 6] // can be abstracted further. Use this value to divide total score by for mean value.
+  const buttons = scale.map((item, index) => (
     <RadioButton
       key={index}
       value={index + 1}
