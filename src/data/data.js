@@ -1,4 +1,4 @@
-export default [
+const data = [
   'I could be experiencing some emotion and not be conscious of it until some time later.',
   'I break or spill things because of carelessness, not paying attention, or thinking of something else.',
   'I find it difficult to stay focused on what\'s happening in the present.',
@@ -15,3 +15,5 @@ export default [
   'I find myself doing things without paying attention.',
   'I snack without being aware that I\'m eating.'
 ]
+
+export default data
