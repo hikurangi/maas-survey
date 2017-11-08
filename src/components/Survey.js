@@ -6,13 +6,9 @@ class Survey extends Component {
     super(props);
     this.state = {}
   }
-
   render() {
     const questions = data.map((item, index) => (
-      <li
-        key={index}
-        id={index}
-      >
+      <li key={index} id={index}>
         {item}
       </li>
     ))
