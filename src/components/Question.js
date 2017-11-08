@@ -7,7 +7,7 @@ const Question = props => {
       key={index}
       value={index + 1}
       label={index + 1}
-      onChange={props.handleChange}
+      onClick={props.handleChange}
       style={{ width: "auto" }}
     />
   ))
