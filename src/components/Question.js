@@ -20,7 +20,6 @@ const Question = props => {
       {props.item}
       <RadioButtonGroup
         name={'scale' + props.id}
-        labelPosition="left"
       >
         {buttons}
       </RadioButtonGroup>
