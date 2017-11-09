@@ -17,7 +17,6 @@ class Survey extends Component {
   }
 
   render() {
-    const scale = [1, 2, 3, 4, 5, 6]
     const stateValues = Object.values(this.state)
     const mean = stateValues.reduce((a, b) => a + b, 0) / stateValues.length
     console.log({mean});
@@ -27,7 +26,7 @@ class Survey extends Component {
           id={index}
           handleChange={this.handleChange}
           item={item}
-          scale={scale}
+          scale={this.props.scale}
         />
       </MuiThemeProvider>
     ))

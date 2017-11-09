@@ -4,7 +4,7 @@ import './App.css';
 import Survey from './components/Survey'
 
 const App = () => {
-  const scaleLabels = [
+  const scale = [
     "Almost Always",
     "Very Frequently",
     "Somewhat Frequently",
@@ -12,7 +12,7 @@ const App = () => {
     "Very Infrequently",
     "Almost Never"
   ]
-  const scaleList = scaleLabels.map((item, index) => <li key={index}>{item}</li>)
+  const scaleList = scale.map((item, index) => <li key={index}>{item}</li>)
   return (
     <div className="App">
       <header className="App-header">
@@ -31,7 +31,7 @@ const App = () => {
         <ol className="scale-list">
           {scaleList}
         </ol>
-        <Survey scaleLabels={scaleLabels}/>
+        <Survey scale={scale}/>
       </section>
     </div>
   );
