@@ -18,9 +18,7 @@ const Question = props => {
   return (
     <li key={props.id}>
       {props.item}
-      <RadioButtonGroup
-        name={'scale' + props.id}
-      >
+      <RadioButtonGroup name={'scale' + props.id}>
         {buttons}
       </RadioButtonGroup>
     </li>
