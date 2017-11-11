@@ -17,7 +17,7 @@ class Survey extends Component {
   }
 
   render() {
-
+    console.log({data, 'data.length': data.length});
     const questions = data.map((item, index) => (
       <MuiThemeProvider key={index}>
         <Question
@@ -30,7 +30,7 @@ class Survey extends Component {
     )) // perhaps the MuiThemeProvider should wrap Survey rather than individually wrapping multiple Question components - requires more research
     const stateValues = Object.values(this.state)
     const mean = stateValues.reduce((a, b) => a + b, 0) / stateValues.length
-    const result = stateValues.length === 15 && mean && <h1>Your MAAS Score is {mean.toFixed(2)}</h1>
+    const result = (stateValues.length === data.length) && mean && <h1>Your MAAS Score is {mean.toFixed(2)}</h1>
 
     return (
       <div>
@@ -40,7 +40,7 @@ class Survey extends Component {
         {result}
       </div>
     )
-    
+
   }
 }
 
