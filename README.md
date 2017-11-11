@@ -4,7 +4,7 @@ The Mindfulness Attention Awareness Scale survey from [here](http://www.mindfuln
 
 To preview this work in progress on your machine:
 
-1. Clone the repo into the location of your choice: `git clone https://github.com/hikurangi/maas-survey.git`
+1. Clone the repo into the location of your choice, and open the folder: `git clone https://github.com/hikurangi/maas-survey.git && cd maas-survey`
 2. `yarn` or `npm i` to install the requisite dependencies.
 3. `yarn start` or `npm run start` to launch the local server.
 4. Use the conveniently launched browser tab *or* navigate to [http://localhost:3000](http://localhost:3000)
