@@ -20,10 +20,6 @@ class Survey extends Component {
   }
 
   render() {
-    console.log({
-      'data in state': this.state.data,
-      'data.length': this.state.data.length
-    });
     const questions = data.map((item, index) => (
       <MuiThemeProvider key={index}>
         <Question
