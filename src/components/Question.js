@@ -1,6 +1,14 @@
 import React from 'react'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 
+const style = {
+  questionStyle: {
+    display: 'inline-block',
+    width: '40px',
+    margin: '20px 10px',
+  }
+}
+
 const Question = props => {
   const buttons = props.scale.map((item, index, array) => {
     let label = ''
@@ -15,11 +23,7 @@ const Question = props => {
         value={index + 1}
         label={index + 1 + ' ' + label}
         onClick={props.handleChange}
-        style={{
-          display: 'inline-block',
-          width: '40px',
-          margin: '20px 10px',
-        }}
+        style={style.questionStyle}
       />
     )
   })
