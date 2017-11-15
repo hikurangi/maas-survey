@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Survey from './components/Survey'
 
@@ -18,6 +17,7 @@ const App = () => {
       <header className="App-header">
         <img alt="Ovio" src="http://ovio.co.nz/wp-content/uploads/2016/09/ovio-logo.png"/>
         <h1 className="App-title">Mindful Attention Awareness Scale</h1>
+        <h3 className="subheading">created by Kirk Warren Brown, PhD & Richard M. Ryan, PhD</h3>
       </header>
       <section className="survey-body">
         <h3 className="subheading">Description</h3>
