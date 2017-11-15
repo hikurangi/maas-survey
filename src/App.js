@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo"/>
+        <img alt="Ovio" src="http://ovio.co.nz/wp-content/uploads/2016/09/ovio-logo.png"/>
         <h1 className="App-title">Mindful Attention Awareness Scale</h1>
       </header>
       <section className="survey-body">
