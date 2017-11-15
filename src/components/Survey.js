@@ -21,20 +21,20 @@ class Survey extends Component {
 
   render() {
     const questions = data.map((item, index) => (
-      <MuiThemeProvider key={index}>
-        <Question
-          id={index}
-          handleChange={this.handleChange}
-          item={item}
-          scale={this.props.scale}
-        />
-      </MuiThemeProvider>
-    )) // perhaps the MuiThemeProvider should wrap Survey rather than individually wrapping multiple Question components - requires more research
+      <Question
+        id={index}
+        handleChange={this.handleChange}
+        item={item}
+        scale={this.props.scale}
+      />
+    ))
     const stateValues = Object.values(this.state).filter(item => !Array.isArray(item))
     return (
       <div>
         <ol>
-          {questions}
+          <MuiThemeProvider>
+            {questions}
+          </MuiThemeProvider>
         </ol>
         <Result
           values={stateValues}
