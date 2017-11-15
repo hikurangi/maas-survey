@@ -8,7 +8,7 @@ const Question = props => {
       label += 'Almost Always'
     } else if (index === array.length - 1) {
       label += 'Almost Never'
-    }
+    } // better as a hover label? should be mobile friendly
     return (
       <RadioButton
         key={index}
