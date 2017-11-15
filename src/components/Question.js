@@ -2,19 +2,27 @@ import React from 'react'
 import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton'
 
 const Question = props => {
-  const buttons = props.scale.map((item, index) => (
-    <RadioButton
-      key={index}
-      value={index + 1}
-      label={index + 1}
-      onClick={props.handleChange}
-      style={{
-        display: 'inline-block',
-        width: '40px',
-        margin: '20px 10px',
-      }}
-    />
-  ))
+  const buttons = props.scale.map((item, index, array) => {
+    let label = ''
+    if (index === 0) {
+      label += 'Almost Always'
+    } else if (index === array.length - 1) {
+      label += 'Almost Never'
+    }
+    return (
+      <RadioButton
+        key={index}
+        value={index + 1}
+        label={index + 1 + ' ' + label}
+        onClick={props.handleChange}
+        style={{
+          display: 'inline-block',
+          width: '40px',
+          margin: '20px 10px',
+        }}
+      />
+    )
+  })
   return (
     <li key={props.id}>
       {props.item}
