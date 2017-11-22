@@ -14,6 +14,6 @@ The Mindfulness Attention Awareness Scale survey from [here](http://www.mindfuln
 [https://hikurangi.github.io/maas-survey/](https://hikurangi.github.io/maas-survey/).
 
 ### To deploy:
-1. Specify a Github Pages URL in `package.json`
+1. Specify a Github Pages URL in `package.json` under `"homepage"`.
 2. Run `npm predeploy && npm deploy`
 3. Enter your credentials where relevant.
