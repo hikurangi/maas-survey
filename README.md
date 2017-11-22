@@ -10,7 +10,8 @@ The Mindfulness Attention Awareness Scale survey from [here](http://www.mindfuln
 4. Use the conveniently launched browser tab *or* navigate to [http://localhost:3000](http://localhost:3000)
 5. Et voilà! There you have it.
 
-### To see it in the wild: [https://hikurangi.github.io/maas-survey/](https://hikurangi.github.io/maas-survey/).
+### To see it in the wild:
+[https://hikurangi.github.io/maas-survey/](https://hikurangi.github.io/maas-survey/).
 
 ### To deploy:
 1. Specify a Github Pages URL in `package.json`
