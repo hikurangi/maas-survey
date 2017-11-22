@@ -38,22 +38,3 @@ const Question = props => {
 }
 
 export default Question
-
-{/* <RadioButton
-  key={index}
-  value={item}
-  label={item}
-  onClick={props.handleChange}
-  style={{
-    width: "auto"
-  }}
-/> */}
-
-{/* <RadioButtonGroup
-  name={'scale' + props.id}
-  labelPosition="left"
-  style={{
-    display: "flex",
-    flexDirection: "row"
-  }}
-> */}
