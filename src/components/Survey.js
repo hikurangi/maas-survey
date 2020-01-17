@@ -1,6 +1,17 @@
+import {
+  Box,
+  FormControl,
+  FormControlLabel,
+  // FormHelperText,
+  // FormLabel,
+  // List,
+  // ListItem,
+  Radio,
+  RadioGroup,
+}                           from '@material-ui/core'
 import React, { useState }  from 'react'
+
 import { scale, questions } from '../data'
-import Question             from './Question'
 import Result               from './Result'
 
 const Survey = () => {
@@ -15,24 +26,66 @@ const Survey = () => {
   }
 
   const answers = Object.values(state)
+  console.log({state, answers})
 
   return (
-    <div>
+    <Box component='article'>
       <ol>
         {
-          questions.map((item, index) => (
-            <Question
-              id={index}
-              handleChange={handleChange}
-              item={item}
-              scale={scale}
-            />
-          ))
+          questions.map((item, index) => {
+            const radioGroupName = 'scale' + index
+
+            return (
+              <li key={index}>
+                <p>{item}</p>
+                <FormControl component='fieldset'>
+                  <RadioGroup
+                    name={radioGroupName}
+                    onChange={handleChange}
+                    // value={state[radioGroupName]}
+                    row
+                  >
+                    {
+                      scale.map((item, index, array) => {
+              
+                        const displayIndex = index + 1
+                        const label        = displayIndex + '.'
+                        // const description  = getLabelDescription({ index, array })
+                        
+                        return (
+                          <FormControlLabel
+                            key={index}
+                            value={displayIndex}
+                            control={<Radio/>}
+                            label={label}
+                            labelPlacement={'start'}
+                          />
+                        )
+                      })
+                    }
+                  </RadioGroup>
+                </FormControl>
+              </li>
+            )
+          })
         }
       </ol>
       <Result answers={answers} />
-    </div>
+    </Box>
   )
 }
 
 export default Survey
+
+// function getLabelDescription ({ index, array }) {
+//   if (index === 0) {
+//     return 'Almost Always'
+
+//   } else if (index === array.length - 1) {
+//     return 'Almost Never'
+  
+//   } else {
+//     return ''
+  
+//   }
+// }

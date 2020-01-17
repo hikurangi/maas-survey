@@ -1,18 +1,18 @@
-import Container   from '@material-ui/core/Container'
-import React       from 'react'
+import { Box, Container } from '@material-ui/core'
+import React              from 'react'
 
-import Description from './Description'
-import Header      from './Header'
-import Survey      from './Survey'
+import Description        from './Description'
+import Header             from './Header'
+import Survey             from './Survey'
 
 const Layout = () => (
-  <Container maxWidth="md">
-    <Header />
-    <main>
+  <Box mt={10} mb={20}>
+    <Container component='main' maxWidth='md'>
+      <Header />
       <Description />
       <Survey />
-    </main>
-  </Container>
+    </Container>
+  </Box>
 )
 
 export default Layout
