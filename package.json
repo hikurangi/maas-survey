@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "material-ui": "^0.19.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.17"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,9 +17,21 @@
   },
   "homepage": "http://hikurangi.github.io/maas-survey",
   "devDependencies": {
-    "gh-pages": "^1.0.0"
+    "gh-pages": "^2.2.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

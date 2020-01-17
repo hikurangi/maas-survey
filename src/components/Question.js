@@ -1,4 +1,4 @@
-import React from 'react'
+import React                             from 'react'
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
 
 const style = {
@@ -9,32 +9,43 @@ const style = {
   }
 }
 
-const Question = props => {
-  const buttons = props.scale.map((item, index, array) => {
+const Question = ({
+  scale,
+  handleChange,
+  id,
+  item
+}) => {
+
+  const buttons = scale.map((item, index, array) => {
     let label = ''
+
     if (index === 0) {
       label += 'Almost Always'
     } else if (index === array.length - 1) {
       label += 'Almost Never'
     } // better as a hover label? should be mobile friendly
+    
     return (
       <RadioButton
         key={index}
         value={index + 1}
         label={index + 1 + ' ' + label}
-        onClick={props.handleChange}
+        onClick={handleChange}
         style={style.questionStyle}
       />
     )
+
   })
+
   return (
-    <li key={props.id}>
-      {props.item}
-      <RadioButtonGroup name={'scale' + props.id}>
+    <li key={id}>
+      {item}
+      <RadioButtonGroup name={'scale-' + id}>
         {buttons}
       </RadioButtonGroup>
     </li>
   )
+  
 }
 
 export default Question

@@ -1,15 +1,15 @@
-import React, {Component} from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import data from '../data/data'
-import Question from './Question'
-import Result from './Result'
+import React, {Component}                   from 'react'
+import { scale, questions as appQuestions } from '../data'
+import Question                             from './Question'
+import Result                               from './Result'
 
+// TODO: functional component with hooks
 class Survey extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      data
+      data: appQuestions || []
     }
   }
 
@@ -20,21 +20,19 @@ class Survey extends Component {
   }
 
   render() {
-    const questions = data.map((item, index) => (
+    const questions = appQuestions.map((item, index) => (
       <Question
         id={index}
         handleChange={this.handleChange}
         item={item}
-        scale={this.props.scale}
+        scale={scale}
       />
     ))
     const stateValues = Object.values(this.state).filter(item => !Array.isArray(item))
     return (
       <div>
         <ol>
-          <MuiThemeProvider>
-            {questions}
-          </MuiThemeProvider>
+          {questions}
         </ol>
         <Result
           values={stateValues}
