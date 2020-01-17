@@ -1,46 +1,38 @@
-import React, {Component}                   from 'react'
-import { scale, questions as appQuestions } from '../data'
-import Question                             from './Question'
-import Result                               from './Result'
+import React, { useState }  from 'react'
+import { scale, questions } from '../data'
+import Question             from './Question'
+import Result               from './Result'
 
-// TODO: functional component with hooks
-class Survey extends Component {
+const Survey = () => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: appQuestions || []
-    }
-  }
+  const [state, setState] = useState({})
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: +e.target.value // only dealing with numbers which are received as strings
+  function handleChange (e) {
+    setState({
+      ...state,
+      [e.target.name]: parseInt(e.target.value, 10)
     })
   }
 
-  render() {
-    const questions = appQuestions.map((item, index) => (
-      <Question
-        id={index}
-        handleChange={this.handleChange}
-        item={item}
-        scale={scale}
-      />
-    ))
-    const stateValues = Object.values(this.state).filter(item => !Array.isArray(item))
-    return (
-      <div>
-        <ol>
-          {questions}
-        </ol>
-        <Result
-          values={stateValues}
-          dataLength={this.state.data.length}
-        />
-      </div>
-    )
-  }
+  const answers = Object.values(state)
+
+  return (
+    <div>
+      <ol>
+        {
+          questions.map((item, index) => (
+            <Question
+              id={index}
+              handleChange={handleChange}
+              item={item}
+              scale={scale}
+            />
+          ))
+        }
+      </ol>
+      <Result answers={answers} />
+    </div>
+  )
 }
 
 export default Survey

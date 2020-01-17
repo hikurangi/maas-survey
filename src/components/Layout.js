@@ -6,6 +6,7 @@ const scaleList = scale.map((item, index) => <li key={index}>{item}</li>)
 
 const Layout = () => {
 
+  // TODO: format layout nicely
   return (
     <>
       <header className="App-header">

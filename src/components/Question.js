@@ -15,33 +15,32 @@ const Question = ({
   id,
   item
 }) => {
-
-  const buttons = scale.map((item, index, array) => {
-    let label = ''
-
-    if (index === 0) {
-      label += 'Almost Always'
-    } else if (index === array.length - 1) {
-      label += 'Almost Never'
-    } // better as a hover label? should be mobile friendly
-    
-    return (
-      <RadioButton
-        key={index}
-        value={index + 1}
-        label={index + 1 + ' ' + label}
-        onClick={handleChange}
-        style={style.questionStyle}
-      />
-    )
-
-  })
-
   return (
     <li key={id}>
       {item}
       <RadioButtonGroup name={'scale-' + id}>
-        {buttons}
+        {
+          scale.map((item, index, array) => {
+
+            const displayIndex = index + 1
+            
+            // lazy string coercion
+            const label = ''
+              + displayIndex
+              + ' '
+              + getLabelDescription({ index, array })
+            
+            return (
+              <RadioButton
+                key={index}
+                value={displayIndex}
+                label={label}
+                onClick={handleChange}
+                style={style.questionStyle}
+              />
+            )
+          })
+        }
       </RadioButtonGroup>
     </li>
   )
@@ -49,3 +48,16 @@ const Question = ({
 }
 
 export default Question
+
+function getLabelDescription ({ index, array }) {
+  if (index === 0) {
+    return 'Almost Always'
+
+  } else if (index === array.length - 1) {
+    return 'Almost Never'
+  
+  } else {
+    return ''
+  
+  }
+}

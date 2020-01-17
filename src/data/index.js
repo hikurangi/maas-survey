@@ -6,6 +6,7 @@ const scale = [
   'Very Infrequently',
   'Almost Never'
 ]
+
 const questions = [
   'I could be experiencing some emotion and not be conscious of it until some time later.',
   'I break or spill things because of carelessness, not paying attention, or thinking of something else.',
