@@ -1,17 +1,14 @@
-import './App.css'
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import CssBaseline      from '@material-ui/core/CssBaseline'
 import React            from 'react'
 
 import Layout           from './components/Layout'
 
 const App = () => (
-  <div className="App">
-    <MuiThemeProvider>
-      <Layout />
-    </MuiThemeProvider>
-  </div>
+  <React.Fragment>
+    <CssBaseline />
+    <Layout />
+  </React.Fragment>
 )
 
 
-export default App;
+export default App

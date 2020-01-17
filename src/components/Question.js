@@ -1,51 +1,40 @@
-import React                             from 'react'
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
-
-const style = {
-  questionStyle: {
-    display: 'inline-block',
-    width: '40px',
-    margin: '20px 10px',
-  }
-}
+import React      from 'react'
+import Radio      from '@material-ui/core/Radio'
+import RadioGroup from '@material-ui/core/RadioGroup'
 
 const Question = ({
   scale,
   handleChange,
   id,
   item
-}) => {
-  return (
-    <li key={id}>
-      {item}
-      <RadioButtonGroup name={'scale-' + id}>
-        {
-          scale.map((item, index, array) => {
+}) => (
+  <li key={id}>
+    {item}
+    <RadioGroup name={'scale-' + id}>
+      {
+        scale.map((item, index, array) => {
 
-            const displayIndex = index + 1
-            
-            // lazy string coercion
-            const label = ''
-              + displayIndex
-              + ' '
-              + getLabelDescription({ index, array })
-            
-            return (
-              <RadioButton
-                key={index}
-                value={displayIndex}
-                label={label}
-                onClick={handleChange}
-                style={style.questionStyle}
-              />
-            )
-          })
-        }
-      </RadioButtonGroup>
-    </li>
-  )
-  
-}
+          const displayIndex = index + 1
+          
+          // lazy string coercion
+          const label = ''
+            + displayIndex
+            + ' '
+            + getLabelDescription({ index, array })
+          
+          return (
+            <Radio
+              key={index}
+              value={displayIndex}
+              label={label}
+              onClick={handleChange}
+            />
+          )
+        })
+      }
+    </RadioGroup>
+  </li>
+)
 
 export default Question
 
