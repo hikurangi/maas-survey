@@ -8,31 +8,35 @@ import {
   // ListItem,
   Radio,
   RadioGroup,
-}                           from '@material-ui/core'
+}                           from '@material-u
+i/core'
 import React, { useState }  from 'react'
 
 import { scale, questions } from '../data'
 import Result               from './Result'
+import StatefulRadioGroup   from './StatefulRadioGroup'
 
 const Survey = () => {
 
-  const [state, setState] = useState({})
+  // const [state, setState] = useState()
 
-  function handleChange (e) {
-    setState({
-      ...state,
-      [e.target.name]: parseInt(e.target.value, 10)
-    })
-  }
+  // function handleChange (e) {
+  //   console.log({targetName: e.target.name, targetValue: e.target.value})
+  //   setState({
+  //     ...state,
+  //     [e.target.name]: parseInt(e.target.value, 10)
+  //   })
+  // }
 
-  const answers = Object.values(state)
-  console.log({state, answers})
+  // const answers = Object.values(state)
+  // console.log({state, answers})
 
   return (
     <Box component='article'>
       <ol>
         {
           questions.map((item, index) => {
+            return <StatefulRadioGroup item={item} index={index} />
             const radioGroupName = 'scale' + index
 
             return (
@@ -42,6 +46,7 @@ const Survey = () => {
                   <RadioGroup
                     name={radioGroupName}
                     onChange={handleChange}
+                    defaultValue={null}
                     // value={state[radioGroupName]}
                     row
                   >
@@ -70,7 +75,7 @@ const Survey = () => {
           })
         }
       </ol>
-      <Result answers={answers} />
+      {/* <Result answers={answers} /> */}
     </Box>
   )
 }

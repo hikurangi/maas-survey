@@ -23,8 +23,7 @@ const Description = () => (
             {
               // @material-ui doesn't seem to let us make normal numbered lists, so here's an ugly manual approach
               (idx + 1)
-                + '.'
-                + ' '
+                + '. '
                 + item
             }
           </ListItem>
