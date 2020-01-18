@@ -1,48 +1,49 @@
-import React, {Component} from 'react'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import data from '../data/data'
-import Question from './Question'
-import Result from './Result'
+import { Box }             from '@material-ui/core'
+import React, { useState } from 'react'
+import { questions }       from '../data'
+import Question            from './Question'
+import Result              from './Result'
 
-class Survey extends Component {
+const Survey = () => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data
-    }
-  }
+  const [state, setState] = useState({})
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]: +e.target.value // only dealing with numbers which are received as strings
+  function handleChange (e) {
+    console.log({targetName: e.target.name, targetValue: e.target.value})
+    setState({
+      ...state,
+      [e.target.name]: parseInt(e.target.value, 10)
     })
   }
 
-  render() {
-    const questions = data.map((item, index) => (
-      <Question
-        id={index}
-        handleChange={this.handleChange}
-        item={item}
-        scale={this.props.scale}
-      />
-    ))
-    const stateValues = Object.values(this.state).filter(item => !Array.isArray(item))
-    return (
-      <div>
-        <ol>
-          <MuiThemeProvider>
-            {questions}
-          </MuiThemeProvider>
-        </ol>
-        <Result
-          values={stateValues}
-          dataLength={this.state.data.length}
-        />
-      </div>
-    )
-  }
+  const answers = Object.values(state)
+  console.log({state, answers})
+
+  return (
+    <Box component='article'>
+      <ol>
+        {
+          questions.map((item, index) => {
+            // index just in an array!
+            const name = 'scale' + index // TODO: unnecessary
+            const value = state[name] || ''
+
+            return (
+              <Question
+                item={item}
+                index={index}
+                value={value}
+                name={name}
+                handleChange={handleChange}
+              />
+            )
+
+          })
+        }
+      </ol>
+      <Result answers={answers} />
+    </Box>
+  )
 }
 
 export default Survey

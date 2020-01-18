@@ -1,40 +1,55 @@
-import React from 'react'
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton'
+import {
+  Box,
+  FormControl,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+}                from '@material-ui/core'
+import React     from 'react'
 
-const style = {
-  questionStyle: {
-    display: 'inline-block',
-    width: '40px',
-    margin: '20px 10px',
-  }
-}
+import { scale } from '../data'
 
-const Question = props => {
-  const buttons = props.scale.map((item, index, array) => {
-    let label = ''
-    if (index === 0) {
-      label += 'Almost Always'
-    } else if (index === array.length - 1) {
-      label += 'Almost Never'
-    } // better as a hover label? should be mobile friendly
-    return (
-      <RadioButton
-        key={index}
-        value={index + 1}
-        label={index + 1 + ' ' + label}
-        onClick={props.handleChange}
-        style={style.questionStyle}
-      />
-    )
-  })
-  return (
-    <li key={props.id}>
-      {props.item}
-      <RadioButtonGroup name={'scale' + props.id}>
-        {buttons}
-      </RadioButtonGroup>
-    </li>
-  )
-}
+const Question = ({
+  handleChange,
+  index,
+  item,
+  name,
+  value,
+}) => (
+  <li key={index}>
+    <p>{item}</p>
+    <Box display="flex" flexDirection="row">
+      <p>{'Almost Always'}</p>
+      <FormControl component='fieldset'>
+        <RadioGroup
+          name={name}
+          onChange={handleChange}
+          defaultValue={''}
+          value={value}
+          row
+        >
+          {
+            scale.map((item, index, array) => {
+    
+              const displayIndex = index + 1
+              const label        = displayIndex + '.'
+              
+              return (
+                <FormControlLabel
+                  key={index}
+                  value={displayIndex}
+                  control={<Radio/>}
+                  label={label}
+                  labelPlacement={'start'}
+                />
+              )
+            })
+          }
+        </RadioGroup>
+      </FormControl>
+      <p>{'Almost Never'}</p>
+    </Box>
+  </li>
+)
 
 export default Question

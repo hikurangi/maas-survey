@@ -1,14 +1,19 @@
-import React from 'react'
+import React         from 'react'
+import { questions } from '../data'
 
-const Result = props => {
-  const mean = props.values.reduce((a, b) => a + b, 0) / props.values.length
-  if (props.values.length === props.dataLength) {
-    return (
-      <h1>Your MAAS Score is {Math.floor(mean) === mean ? mean : mean.toFixed(2)}</h1>
-    )
-  } else {
-    return null
-  }
+const Result = ({ answers }) => {
+  
+  const liveScore      = answers.reduce((a, b) => a + b, 0) / answers.length
+  
+  // if score is a whole integer
+  const formattedScore = Math.floor(liveScore) === liveScore
+    ? liveScore // just print it
+    : liveScore.toFixed(2) // otherwise round nicely for presentation
+
+  return answers.length === questions.length
+    ? <h1>Your MAAS Score is {formattedScore}</h1>
+    : null
+
 }
 
 export default Result
