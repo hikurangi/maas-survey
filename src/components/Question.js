@@ -18,7 +18,11 @@ const Question = ({
 }) => (
   <li key={index}>
     <p>{item}</p>
-    <Box display="flex" flexDirection="row">
+    <Box
+      display='flex'
+      flexDirection='row'
+      mb='8'
+    >
       <p>{'Almost Always'}</p>
       <FormControl component='fieldset'>
         <RadioGroup
