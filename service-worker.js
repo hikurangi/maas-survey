@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/maas-survey/precache-manifest.d2e11160b8c0d3f97314bfda91e5516b.js"
+  "/maas-survey/precache-manifest.f471fb6c021109aa987342a04f9c2d94.js"
 );
 
 self.addEventListener('message', (event) => {
