@@ -25,7 +25,7 @@ const Survey = () => {
         {
           questions.map((item, index) => {
             // index just in an array!
-            const name = 'scale' + index // TODO: unnecessary
+            const name = 'scale' + index
             const value = state[name] || ''
 
             return (
@@ -41,7 +41,7 @@ const Survey = () => {
           })
         }
       </ol>
-      <Result answers={answers} />
+      {answers.length > 0 && <Result answers={answers} />}
     </Box>
   )
 }

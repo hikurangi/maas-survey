@@ -2,7 +2,6 @@ import React         from 'react'
 import { questions } from '../data'
 
 const Result = ({ answers }) => {
-  
   const liveScore      = answers.reduce((a, b) => a + b, 0) / answers.length
   
   // if score is a whole integer

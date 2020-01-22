@@ -21,7 +21,7 @@ const Description = () => (
         scale.map((item, idx) => (
           <ListItem key={idx}>
             {
-              // @material-ui doesn't seem to let us make normal numbered lists, so here's an ugly manual approach
+              // @material-ui doesn't seem to add numbers to <ol> list items ?
               (idx + 1)
                 + '. '
                 + item
