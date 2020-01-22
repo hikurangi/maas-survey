@@ -17,16 +17,23 @@ const Question = ({
   name,
   value,
 }) => (
-    <li key={index}>
-      <Box
-        display='flex'
-        flexDirection='row'
-        justifyContent='space-between'
-        width='100%'
-      >
-        <FormControl
-          component='fieldset'
-          width='100%'
+  <li key={index}>
+    <p>{item}</p>
+    <Box
+      display='flex'
+      flexDirection='row'
+      justifyContent='space-between'
+      width='100%'
+      mb='8'
+    >
+      <p>{'Almost Always'}</p>
+      <FormControl component='fieldset'>
+        <RadioGroup
+          name={name}
+          onChange={handleChange}
+          defaultValue={''}
+          value={value}
+          row
         >
           <FormLabel component='legend'>{item}</FormLabel>
           <RadioGroup

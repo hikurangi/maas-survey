@@ -9,7 +9,6 @@ const Survey = () => {
   const [state, setState] = useState({})
 
   function handleChange (e) {
-    console.log({targetName: e.target.name, targetValue: e.target.value})
     setState({
       ...state,
       [e.target.name]: parseInt(e.target.value, 10)
