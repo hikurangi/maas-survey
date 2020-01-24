@@ -16,7 +16,7 @@ const Description = () => (
     <p>
        Below is a collection of statements about your everyday experience. Using the 1-6 scale below, please indicate how frequently or infrequently you currently have each experience. Please answer according to what really reflects your experience rather than what you think your experience should be. Please treat each item separately from every other item.
     </p>
-    <List component='ol'>
+    <List component='ol' >
       {
         scale.map((item, idx) => (
           <ListItem key={idx}>
