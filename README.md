@@ -1,6 +1,6 @@
 # maas-survey
 
-The Mindfulness Attention Awareness Scale survey from [here](http://www.mindfulness-extended.nl/content3/wp-content/uploads/2013/07/MAAS-EN.pdf), built in React.
+The Mindfulness Attention Awareness Scale survey from [here](http://www.mindfulness-extended.nl/content3/wp-content/uploads/2013/07/MAAS-EN.pdf), built in React. This is a work in progress!
 
 ### To preview on your machine:
 
@@ -15,5 +15,5 @@ The Mindfulness Attention Awareness Scale survey from [here](http://www.mindfuln
 
 ### To deploy:
 1. Specify a Github Pages URL in `package.json` under `"homepage"`.
-2. Run `npm predeploy && npm deploy`
+2. Run `npm run predeploy && npm run deploy`
 3. Enter your credentials where relevant.
